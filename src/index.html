@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+</head>
+<body>
+    <div class="container">
+        <div class="weather-app">
+            <header>
+                <h1>Weather Forecast</h1>
+                <p>Get accurate weather information for any location</p>
+                
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="city-input" placeholder="Enter city name...">
+                    </div>
+                    <button class="btn btn-primary" id="search-btn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                    <button class="btn btn-secondary" id="location-btn">
+                        <i class="fas fa-location-arrow"></i> Current Location
+                    </button>
+                </div>
+            </header>
+            
+            <div class="weather-content">
+                <div class="current-weather">
+                    <div class="location">
+                        <h2>New York, US</h2>
+                        <p>Thursday, July 3, 2025</p>
+                    </div>
+                    
+                    <div class="current-info">
+                        <div id = 'current-info-error'>
+
+                        </div>
+                        <div class="temperature">
+                            <div class="temp-value">24</div>
+                            <div class="temp-unit">°C</div>
+                        </div>
+                        
+                        <div class="weather-icon">
+                            <i class="fas fa-partly-cloudy"></i>
+                        </div>
+                        
+                        <div class="weather-info">
+                            <div class="weather-condition">Sunny</div>
+                            <div class="weather-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-wind"></i>
+                                    <div class="detail-label">Wind</div>
+                                    <div class="detail-value">12 km/h</div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-tint"></i>
+                                    <div class="detail-label">Humidity</div>
+                                    <div class="detail-value">65%</div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-compress"></i>
+                                    <div class="detail-label">Pressure</div>
+                                    <div class="detail-value">1013 hPa</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="forecast">
+                    <h3>7-Day Forecast</h3>
+                    <div class="forecast-days">
+                        <!-- Forecast items will be generated here -->
+                    </div>
+                </div>
+            </div>
+            
+            <footer>
+                <p>© 2025 Weather Forecast App | Data provided by OpenWeatherMap</p>
+            </footer>
+        </div>
+    </div>
+    <!--
+    <script>
+        // Sample data for the weather app
+        const forecastData = [
+            { day: 'Fri', date: 'Jul 4', icon: 'cloud-sun', condition: 'Partly Cloudy', high: 26, low: 18 },
+            { day: 'Sat', date: 'Jul 5', icon: 'cloud', condition: 'Cloudy', high: 23, low: 17 },
+            { day: 'Sun', date: 'Jul 6', icon: 'cloud-showers-heavy', condition: 'Showers', high: 21, low: 16 },
+            { day: 'Mon', date: 'Jul 7', icon: 'sun', condition: 'Sunny', high: 27, low: 19 },
+            { day: 'Tue', date: 'Jul 8', icon: 'bolt', condition: 'Thunderstorms', high: 22, low: 17 },
+            { day: 'Wed', date: 'Jul 9', icon: 'cloud-sun', condition: 'Partly Cloudy', high: 24, low: 18 },
+            { day: 'Thu', date: 'Jul 10', icon: 'sun', condition: 'Sunny', high: 28, low: 20 }
+        ];
+
+        // Generate forecast items
+        const forecastContainer = document.querySelector('.forecast-days');
+        
+        forecastData.forEach(day => {
+            const forecastItem = document.createElement('div');
+            forecastItem.className = 'forecast-day';
+            forecastItem.innerHTML = `
+                <div class="forecast-date">${day.day}<br>${day.date}</div>
+                <i class="fas fa-${day.icon}"></i>
+                <div class="forecast-temp">${day.high}°</div>
+                <div class="forecast-condition">${day.condition}</div>
+                <div class="forecast-low">Low: ${day.low}°</div>
+            `;
+            forecastContainer.appendChild(forecastItem);
+        });
+
+        // Search functionality
+        const searchBtn = document.getElementById('search-btn');
+        const locationBtn = document.getElementById('location-btn');
+        const cityInput = document.getElementById('city-input');
+        
+        searchBtn.addEventListener('click', () => {
+            const city = cityInput.value.trim();
+            if (city) {
+                // In a real app, this would fetch weather data
+                document.querySelector('.location h2').textContent = city;
+                cityInput.value = '';
+                showNotification(`Showing weather for ${city}`);
+            }
+        });
+        
+        locationBtn.addEventListener('click', () => {
+            showNotification('Fetching your location...');
+            // In a real app, this would use Geolocation API
+            setTimeout(() => {
+                document.querySelector('.location h2').textContent = 'London, UK';
+                showNotification('Location found! Showing weather for your location.');
+            }, 1500);
+        });
+        
+        cityInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchBtn.click();
+            }
+        });
+        
+        function showNotification(message) {
+            // This would show a notification in a real app
+            console.log(message);
+        }
+    </script>
+    -->
+</body>
+</html>
