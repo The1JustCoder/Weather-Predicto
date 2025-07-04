@@ -172,6 +172,7 @@ function renderCurrentCondition(address, weatherData){
 
 function renderUpcomingForecasts(forecastData){
     const forecastContainer = document.querySelector('.forecast-days');
+    forecastContainer.textContent = "";
     forecastData.forEach(day => {
         const forecastItem = document.createElement('div');
         forecastItem.className = 'forecast-day';
